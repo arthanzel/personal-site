@@ -1,14 +1,9 @@
 import { parse as marked } from "marked";
+import Head from "next/head";
 
-import profilePicture from "@/r/profile.jpg";
+import Base64Protect from "@/components/Base64Protect";
+import ProfilePicture from "@/components/ProfilePicture";
 import styles from "./cv.module.scss";
-
-// TODO: Tweak rendering details with an optional export
-// export const config = {
-//     // layout: "default",
-//     head: <></>,
-//     style: <></>,
-// };
 
 // #region Components
 
@@ -80,7 +75,8 @@ const technicalExperience = [
         location: "Lausanne, Switzerland",
         date: [2020, 2021],
         remarks: [
-            "Architected an **IoT** system for smart home management, and designed **security** algorithms for device discovery and pairing.",
+            "Architected a **cloud-hybrid** **IoT** system for smart home management.",
+            "Designed **security** algorithms for device discovery and pairing.",
             "Evaluated **database** software for performance in **big data analytics** pipelines.",
             "Created automated provisioning and deployment processes for **cloud infrastructure**.",
         ],
@@ -124,33 +120,35 @@ const technicalExperience = [
 
 // #endregion
 
-export default () => (
+export default () => (<>
+    <Head>
+        <title>Martin Hanzel CV</title>
+    </Head>
     <div className={styles["cv-body"]}>
         <header className={styles["chroma-header"]}>
             <nav className="p-3 fs-4">
-                icon navigation
+                &nbsp;
             </nav>
 
             <div className={`container-fluid mt-4}`}>
                 <div className="row">
-                    <div className="col-md-5 text-end">
-                        <div className={styles["header-image"]}>
-                            <img src="https://placekitten.com/250/250" />
-                        </div>
+                    <div className="col-md-5 text-center text-md-end">
+                        <div className={styles["header-image"]}><ProfilePicture width="240px" /></div>
+
                     </div>
 
-                    <div className="col d-flex flex-column gap-2">
+                    <div className="col d-flex flex-column gap-2 text-center text-md-start">
                         <h1 className="m-0">Martin Hanzel</h1>
                         <small>Travelling computer scientist and architect</small>
-                        <div className={`d-flex gap-2 my-1 ${styles.socials}`}>
-                            <a href="https://github.com/arthanzel" className="fa-brands fa-github"></a>
-                            <a href="https://gitlab.com/arthanzel" className="fa-brands fa-gitlab"></a>
-                            <a href="https://www.linkedin.com/in/arthanzel/" className="fa-brands fa-linkedin-in"></a>
-                            <a href="https://soundcloud.com/arthanzel/" className="fa-brands fa-soundcloud"></a>
+                        <div className={`d-flex gap-2 justify-content-center justify-content-md-start my-1 ${styles.socials}`}>
+                            <a href="https://github.com/arthanzel"><i className="fa-brands fa-github"></i></a>
+                            <a href="https://gitlab.com/arthanzel"><i className="fa-brands fa-gitlab"></i></a>
+                            <a href="https://www.linkedin.com/in/arthanzel/"><i className="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://soundcloud.com/arthanzel/"><i className="fa-brands fa-soundcloud"></i></a>
                         </div>
                         <div>
                             <i className="fa-regular fa-envelope me-2"></i>
-                            <span className="font-monospace">TODO: martin at hanzel dot io</span>
+                            <span className="font-monospace"> martin at hanzel dot io</span>
                         </div>
                         <div>
                             <div className="d-inline-block">
@@ -171,7 +169,7 @@ export default () => (
                     <section className="">
                         {/* <h2>Objective</h2> */}
                         <p className="lead">Hello &#128075;</p>
-                        <p className="">I'm a computer scientist with <strong>over 10 years of combined technical and leadership experience</strong>. I did my Masters degree at <a href="https://www.epfl.ch/education/master/programs/computer-science/">EPFL</a>, one of the world's top 10 universities for computing. Before that, I led a <strong>genetic engineering research</strong> group and explored the nascent field of <strong>biological computation</strong>.</p>
+                        <p className="">I'm a computer scientist with <strong>over 10 years of combined technical and leadership experience</strong>. I did my Masters degree at <a href="https://www.epfl.ch/education/master/programs/computer-science/">EPFL</a>, one of the world's top 10 universities for computer science. Before that, I led a <strong>genetic engineering research</strong> group and explored the nascent field of <strong>biological computation</strong>.</p>
 
                         <p><strong>I'm looking for a senior engineering or software architecture role</strong> where I can design solutions, own a product, lead a team, and be a mentor to junior colleagues.</p>
                     </section>
@@ -204,13 +202,14 @@ export default () => (
                             <div>Let's explore <strong>disruptive technologies</strong> together. Thanks to my excellent academic background, I'm comfortable researching technology at the cutting edge of innovation.</div>
                         </div>
                     </section>
-                    <section>
+                    <section className="fsx-sm">
                         <h2>Competences</h2>
-                        <p>TODO: Stuff I've researched</p>
+                        <p><strong>Human languages:</strong> English (native), Slovak (native), Czech (fluent), French (fluent), Spanish (beginner)</p>
+                        <p><strong>Tech stuff:</strong></p>
                     </section>
-                    <section>
+                    <section id={styles.publications}>
                         <h2>Publications</h2>
-                        <ul>
+                        <ul className="fsx-sm">
                             <li><a href="https://pubmed.ncbi.nlm.nih.gov/26075023/">(2015) No training required: experimental tests support homology-based DNA assembly as a best practice in synthetic biology </a></li>
                         </ul>
                     </section>
@@ -271,8 +270,8 @@ export default () => (
                             <li>Oversaw <strong>finances, fundraising, and hiring</strong>.</
                             li>
                             <li>Wrote bioinformatics software for gene network construction.</li>
-                            <li><strong>Consulted for a biotechnology startup in Ottawa.</strong></li>
-                            </Leadership>
+                            <li><strong>Consulted</strong> for a biotechnology startup in Ottawa.</li>
+                        </Leadership>
                         <Leadership
                             role="Founder"
                             company="uEducate"
@@ -280,14 +279,57 @@ export default () => (
                             <li>Founded <i>uEducate</i>, an organization dedicated to <strong>promoting higher education in science and technology</strong>. </li>
                             <li>Established an annual science competition for high school students in Ontario, Canada.</li>
                             <li><strong>Created financial scholarships</strong> for aspiring science students, in the amount of <strong>$4000</strong> in the first year and more in years after. </li>
-                            </Leadership>
+                        </Leadership>
                     </section>
                 </div>
             </div>
 
-            <section>
-                <h2>Selected projects</h2>
+            <h2>Open source</h2>
+            <section className="container-fluid">
+                <div className="row">
+                    <div className="col">
+                        <div className={`d-flex gap-3 ${styles["os-project"]}`}>
+                            <i className="fa-solid fa-square-root-variable"></i>
+                            <div className="flex-grow-1">
+                                <small>Library</small>
+                                <h3 className={styles.title}><a href="#">Evaluatex</a></h3>
+                                <p className="fsx-sm">Safe LaTeX and ASCIIMath evaluator for JavaScript.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className={`d-flex gap-3 ${styles["os-project"]}`}>
+                            <i className="fa-solid fa-dna"></i>
+                            <div className="flex-grow-1">
+                                <small>Webapp</small>
+                                <h3 className={styles.title}><a href="#">Quantum of Cells</a></h3>
+                                <p className="fsx-sm">Prototype systems of interacting differential equations in the browser.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className={`d-flex gap-3 ${styles["os-project"]}`}>
+                            <i className="fa-solid fa-fish-fins"></i>
+                            <div className="flex-grow-1">
+                                <small>Research</small>
+                                <h3 className={styles.title}><a href="#">The River Machine</a></h3>
+                                <p className="fsx-sm">Agent-based population modelling of fish in a river ecosystem.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className={`d-flex gap-3 ${styles["os-project"]}`}>
+                            <i className="fa-solid fa-share-nodes"></i>
+                            <div className="flex-grow-1">
+                                <small>Research</small>
+                                <h3 className={styles.title}><a href="#">Share Tree DB</a></h3>
+                                <p className="fsx-sm">
+                                    A blockchain-based database allowing secure storage and sharing of data in untrusted environments.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
     </div>
-);
+</>);

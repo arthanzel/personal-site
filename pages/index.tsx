@@ -1,7 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect } from "react";
 
-import profilePicture from "@/r/profile.jpg";
+import ProfilePicture from "@/components/ProfilePicture";
+
 import styles from "./index.module.scss";
 
 export default function IndexPage() {
@@ -16,9 +18,7 @@ export default function IndexPage() {
 
     return (<>
         <main className="container-fluid paper-width my-4 text-center d-flex flex-column justify-content-center align-items-center min-vh-100 gap-4">
-            <div id={styles["profile-picture"]} className="inline-block">
-                <img src={profilePicture.src} alt="Martin's beautiful face" />
-            </div>
+            <ProfilePicture />
 
             <h1 className="m-0">I'm Martin</h1>
             <nav id={styles["icon-nav"]} className="d-flex justify-content-center gap-3 fs-2">
@@ -50,7 +50,7 @@ export default function IndexPage() {
 
             <div className="d-flex gap-2">
                 <div className="btn btn-outline-primary">Writings - coming soon</div>
-                <a className="btn btn-outline-primary" href="/cv-fluid">Résumé</a>
+                <Link className="btn btn-outline-primary" href="/cv-fluid">Résumé</Link>
             </div>
         </main>
     </>);

@@ -5,9 +5,33 @@ $header: #272727;
 $header-overlap: 32px;
 
 .cv-body {
+    main {
+        a {
+            background-color: mix($primary, $field, 8%);
+            border-bottom: 1px dashed $primary;
+            color: scale-color($primary, $lightness: -15%);
+            font-family: "Raleway";
+            font-weight: bold;
+            letter-spacing: 0.05em;
+            padding: 0 0.25rem 1px 0.25rem;
+            text-decoration: none;
+
+            transition: all 0.5s;
+
+            &:hover {
+                background-color: mix($primary, $field, 20%);
+            }
+        }
+    }
+
     hr {
         border: 0;
         border-top: 1px solid #272727;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: Raleway, sans-serif;
+        font-variant-caps: all-small-caps;
     }
 
     h2 {
@@ -24,6 +48,7 @@ $header-overlap: 32px;
 
     main {
         max-width: 1536px;
+        padding: 1rem;
     }
 }
 
@@ -43,23 +68,23 @@ $header-overlap: 32px;
 
 .chroma-header {
     background: $header;
+    border-bottom: 0.3rem solid $primary;
     color: $field;
     margin-bottom: $header-overlap + 8px;
 }
 
 .header-image {
-    border: 3px solid #272727;
-    ;
-    border-radius: 999px;
-
     display: inline-block;
     position: relative;
-    max-width: 250px;
     top: $header-overlap;
 
-    &>* {
+    border: 3px solid #272727;
+    border-radius: 999px;
+
+    font-size: 0px;
+
+    & > * {
         border: 3px solid $field;
-        border-radius: 999px;
     }
 }
 
@@ -77,7 +102,7 @@ $header-overlap: 32px;
         flex-shrink: 0;
         padding-right: 0.5rem;
         text-align: end;
-        width: 150px;
+        width: 180px;
 
         .title {
             font-weight: bold;
@@ -93,3 +118,39 @@ $header-overlap: 32px;
         }
     }
 }
+
+#publications {
+    ul {
+        list-style: none;
+
+        margin: 0;
+        padding: 0;
+
+        li {
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+
+.os-project {
+    i {
+        font-size: 24px;
+        margin-top: 1rem;
+    }
+
+    small {
+        color: #666;
+        font-variant-caps: all-small-caps;
+        letter-spacing: 0.05rem;
+    }
+
+    h3 {
+        color: #272727;
+        font-size: 1.25rem;
+        font-variant-caps: all-small-caps;
+        font-weight: bold;
+        letter-spacing: 0.03rem;
+    }
+}
+

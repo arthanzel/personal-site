@@ -1,0 +1,11 @@
+.profile-picture {
+    border-radius: 999px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    overflow: hidden;
+
+    img {
+        filter: sepia(15%);
+        transform: scale(1.2) translateX(2px) translateY(-4px);
+    }
+}
