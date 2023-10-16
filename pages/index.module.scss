@@ -1,0 +1,28 @@
+#profile-picture {
+    border: 3px solid var(--bs-primary);
+    border-radius: 999px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    width: 180px;
+}
+
+#profile-picture img {
+    filter: sepia(15%);
+    transform: scale(1.2) translateX(2px) translateY(-4px);
+}
+
+#icon-nav {
+    a {
+        color: black;
+        text-decoration: none;
+        transition: color 0.5s;
+
+        &:hover {
+            color: #198754;
+        }
+    }
+}
+
+.monospace {
+    font-family: monospace;
+}

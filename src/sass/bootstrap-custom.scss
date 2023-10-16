@@ -1,0 +1,50 @@
+$primary: #198754;
+$body-bg: #f7f7f7;
+$body-bg: mix(#f7f7f7, antiquewhite, 85%);
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Raleway, Helvetica, sans-serif;
+}
+
+p {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+.paper-width {
+    max-width: 960px;
+}
+
+// Why won't Bootstrap ship with decent font size classes?
+.fsx-xs {
+    font-size: 0.75rem;
+}
+
+.fsx-sm {
+    font-size: 0.875rem;
+}
+
+.fsx-lg {
+    font-size: 1.125rem;
+}
+
+.fsx-xl {
+    font-size: 1.25rem;
+}
+
+.fsx-2xl {
+    font-size: 1.5rem;
+}
+
+.fsx-3xl {
+    font-size: 1.875rem;
+}
+
+.fsx-4xl {
+    font-size: 2rem;
+}

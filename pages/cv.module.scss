@@ -1,0 +1,95 @@
+$primary: #198754;
+$field: mix(#f7f7f7, antiquewhite, 95%);
+$header: mix($primary, black, 70%);
+$header: #272727;
+$header-overlap: 32px;
+
+.cv-body {
+    hr {
+        border: 0;
+        border-top: 1px solid #272727;
+    }
+
+    h2 {
+        background: rgba($primary, 0.1);
+        border-bottom: 2px solid $primary;
+        color: #272727;
+        display: inline-block;
+        font-size: 1.125rem;
+        font-variant-caps: all-small-caps;
+        font-weight: bold;
+        margin: 0 0 12px 0;
+        padding: 4px 8px 4px 48px;
+    }
+
+    main {
+        max-width: 1536px;
+    }
+}
+
+.socials {
+    a {
+        color: white !important;
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
+}
+
+.highlight-strong {
+    strong {
+        color: green;
+    }
+}
+
+.chroma-header {
+    background: $header;
+    color: $field;
+    margin-bottom: $header-overlap + 8px;
+}
+
+.header-image {
+    border: 3px solid #272727;
+    ;
+    border-radius: 999px;
+
+    display: inline-block;
+    position: relative;
+    max-width: 250px;
+    top: $header-overlap;
+
+    &>* {
+        border: 3px solid $field;
+        border-radius: 999px;
+    }
+}
+
+.square-fa-icon {
+    flex-shrink: 0;
+    text-align: center;
+    width: 2rem;
+}
+
+.technical {
+    gap: 0.5rem;
+
+    .info {
+        border-right: 1px dotted #272727;
+        flex-shrink: 0;
+        padding-right: 0.5rem;
+        text-align: end;
+        width: 150px;
+
+        .title {
+            font-weight: bold;
+        }
+    }
+
+    ul {
+        list-style: none;
+
+        li p {
+            // Paragaphs are inserted by Markdown parsing of remarks
+            margin: 0;
+        }
+    }
+}
