@@ -1,6 +1,4 @@
-$primary: #198754;
-$body-bg: #f7f7f7;
-$body-bg: mix(#f7f7f7, antiquewhite, 85%);
+@import "common";
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
 

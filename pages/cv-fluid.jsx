@@ -25,7 +25,7 @@ const Education = ({ title, where, date, distinction }) => (<div>
 
 </div>);
 
-const Technical = ({ role, company, href, location, date, remarks, children }) => (<div className={`mb-3 d-flex fsx-xs ${styles.technical}`}>
+const Technical = ({ role, company, href, location, date, remarks, children }) => (<div className={`mb-3 d-md-flex fsx-xs ${styles.technical}`}>
     <div className={`${styles.info}`}>
         <div className={styles.title}>{role}</div>
         {href ?
@@ -125,36 +125,35 @@ export default () => (<>
         <title>Martin Hanzel CV</title>
     </Head>
     <div className={styles["cv-body"]}>
-        <header className={styles["chroma-header"]}>
+        <header>
             <nav className="p-3 fs-4">
                 &nbsp;
             </nav>
 
-            <div className={`container-fluid mt-4}`}>
+            <div className={`container-fluid`}>
                 <div className="row">
                     <div className="col-md-5 text-center text-md-end">
-                        <div className={styles["header-image"]}><ProfilePicture width="240px" /></div>
-
+                        <div className={styles["header-image"]}><ProfilePicture width="100%" /></div>
                     </div>
 
-                    <div className="col d-flex flex-column gap-2 text-center text-md-start">
+                    <div className="col d-flex flex-column gap-2 pb-3 pb-md-0 text-center text-md-start">
                         <h1 className="m-0">Martin Hanzel</h1>
+
                         <small>Travelling computer scientist and architect</small>
-                        <div className={`d-flex gap-2 justify-content-center justify-content-md-start my-1 ${styles.socials}`}>
+
+                        <div className={`hstack gap-3 my-1 fsx-2xl justify-content-center justify-content-md-start ${styles.socials}`}>
                             <a href="https://github.com/arthanzel"><i className="fa-brands fa-github"></i></a>
                             <a href="https://gitlab.com/arthanzel"><i className="fa-brands fa-gitlab"></i></a>
                             <a href="https://www.linkedin.com/in/arthanzel/"><i className="fa-brands fa-linkedin-in"></i></a>
                             <a href="https://soundcloud.com/arthanzel/"><i className="fa-brands fa-soundcloud"></i></a>
                         </div>
-                        <div>
+                        <div className="d-flex justify-content-center justify-content-md-start align-items-center">
                             <i className="fa-regular fa-envelope me-2"></i>
-                            <span className="font-monospace"> martin at hanzel dot io</span>
+                            <span className="font-monospace">martin at hanzel dot io</span>
                         </div>
-                        <div>
-                            <div className="d-inline-block">
-                                <i className="fa-solid fa-earth-europe me-2"></i>
-                            </div>
-                            <div className="d-inline-block">
+                        <div className="d-flex justify-content-center justify-content-md-start align-items-center">
+                            <i className="fa-solid fa-earth-europe me-2"></i>
+                            <div className="">
                                 Able to live+work in Canada, Switzerland, EU
                             </div>
                         </div>

@@ -1,11 +1,82 @@
-$primary: #198754;
-$field: mix(#f7f7f7, antiquewhite, 95%);
-$header: mix($primary, black, 70%);
-$header: #272727;
+@use "../src/sass/common" as *;
+
+$header: $text;
 $header-overlap: 32px;
 
 .cv-body {
+    // GLOBALS
+
+    hr {
+        border: 0;
+        border-top: 1px solid #272727;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-variant-caps: all-small-caps;
+    }
+
+    h2 {
+        background: rgba($primary, 0.1);
+        border-bottom: 2px solid $primary;
+        color: #272727;
+        display: inline-block;
+        font-size: 1.125rem;
+        font-variant-caps: all-small-caps;
+        font-weight: bold;
+        margin: 0 0 12px 0;
+        padding: 4px 8px 4px 48px;
+    }
+
+    // DOCUMENT SECTIONS
+
+    header {
+        background: $header;
+        border-bottom: 0.3rem solid $primary;
+        color: $field;
+        margin-bottom: $header-overlap + 8px;
+
+        h1 {
+            letter-spacing: 0.15em;
+        }
+
+        .socials {
+            a {
+                color: white !important;
+                text-decoration: none;
+            }
+        }
+
+        .header-image {
+            display: inline-block;
+            position: relative;
+            width: 128px;
+
+            border: 3px solid #272727;
+            border-radius: 999px;
+
+            font-size: 0px;
+
+            @include responsive-md() {
+                top: $header-overlap;
+                width: 240px;
+            }
+
+            &>* {
+                border: 3px solid $field;
+            }
+        }
+    }
+
     main {
+        section {
+            margin-bottom: 1rem;
+        }
+
         a {
             background-color: mix($primary, $field, 8%);
             border-bottom: 1px dashed $primary;
@@ -24,67 +95,15 @@ $header-overlap: 32px;
         }
     }
 
-    hr {
-        border: 0;
-        border-top: 1px solid #272727;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-        font-family: Raleway, sans-serif;
-        font-variant-caps: all-small-caps;
-    }
-
-    h2 {
-        background: rgba($primary, 0.1);
-        border-bottom: 2px solid $primary;
-        color: #272727;
-        display: inline-block;
-        font-size: 1.125rem;
-        font-variant-caps: all-small-caps;
-        font-weight: bold;
-        margin: 0 0 12px 0;
-        padding: 4px 8px 4px 48px;
-    }
-
     main {
         max-width: 1536px;
         padding: 1rem;
     }
 }
 
-.socials {
-    a {
-        color: white !important;
-        font-size: 1.5rem;
-        text-decoration: none;
-    }
-}
-
 .highlight-strong {
     strong {
         color: green;
-    }
-}
-
-.chroma-header {
-    background: $header;
-    border-bottom: 0.3rem solid $primary;
-    color: $field;
-    margin-bottom: $header-overlap + 8px;
-}
-
-.header-image {
-    display: inline-block;
-    position: relative;
-    top: $header-overlap;
-
-    border: 3px solid #272727;
-    border-radius: 999px;
-
-    font-size: 0px;
-
-    & > * {
-        border: 3px solid $field;
     }
 }
 
@@ -96,13 +115,24 @@ $header-overlap: 32px;
 
 .technical {
     gap: 0.5rem;
+    text-align: center;
 
     .info {
-        border-right: 1px dotted #272727;
-        flex-shrink: 0;
-        padding-right: 0.5rem;
-        text-align: end;
-        width: 180px;
+        border-bottom: 1px dotted scale-color($text, $lightness: 60%);
+        padding: 0 0 0.25rem 0;
+        margin: 0 0 0.25rem 0;
+
+        @include responsive-md() {
+            flex-shrink: 0;
+            width: 180px;
+
+            border-right: 1px dotted $text;
+            border-bottom: 0;
+            padding: 0 0.5rem 0 0;
+            margin: 0;
+
+            text-align: end;
+        }
 
         .title {
             font-weight: bold;
@@ -114,7 +144,11 @@ $header-overlap: 32px;
 
         li p {
             // Paragaphs are inserted by Markdown parsing of remarks
-            margin: 0;
+            margin: 0.125rem;
+
+            @include responsive-md() {
+                margin: 0;
+            }
         }
     }
 }
@@ -153,4 +187,3 @@ $header-overlap: 32px;
         letter-spacing: 0.03rem;
     }
 }
-
