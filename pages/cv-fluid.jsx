@@ -124,6 +124,7 @@ export default () => (<>
     <Head>
         <title>Martin Hanzel CV</title>
     </Head>
+    <div className="p-3 text-center fsx-sm" style={{ color: "white", background: "#d35", fontWeight: "bold", fontFamily: "Raleway" }}>Hey! I'm still building this CV page, so it's not 100% complete. But feel free to write to me if you have questions.</div>
     <div className={styles["cv-body"]}>
         <header>
             <nav className="p-3 fs-4">
