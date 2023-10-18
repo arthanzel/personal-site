@@ -1,0 +1,7 @@
+@use "sass:map";
+
+@import "./common.scss";
+
+.flowable {
+    margin-bottom: map.get($spacers, 3);
+}

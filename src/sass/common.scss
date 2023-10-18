@@ -1,11 +1,14 @@
 @use "sass:map";
 
+@import "node_modules/bootstrap/scss/functions";
+
 $primary: #198754;
-$field: mix(#f7f7f7, antiquewhite, 95%);
+$field: mix(#f7f7f7, antiquewhite, 90%);
 $text: #272727;
 
 // Bootstrap overrides
 $body-bg: $field;
+$body-color: $text;
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
@@ -15,32 +18,8 @@ $grid-breakpoints: (
   xxl: 1400px
 );
 
-@mixin responsive-sm() {
-    @media (min-width: map.get($grid-breakpoints, sm)) {
-        @content;
-    }
-}
-
-@mixin responsive-md() {
-    @media (min-width: map.get($grid-breakpoints, md)) {
-        @content;
-    }
-}
-
-@mixin responsive-lg() {
-    @media (min-width: map.get($grid-breakpoints, lg)) {
-        @content;
-    }
-}
-
-@mixin responsive-xl() {
-    @media (min-width: map.get($grid-breakpoints, xl)) {
-        @content;
-    }
-}
-
-@mixin responsive-2xl() {
-    @media (min-width: map.get($grid-breakpoints, xxl)) {
-        @content;
-    }
-}
+// Expose Bootstrap mixins to module styles
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/variables-dark";
+@import "node_modules/bootstrap/scss/maps";
+@import "node_modules/bootstrap/scss/mixins";

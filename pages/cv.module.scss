@@ -8,7 +8,7 @@ $header-overlap: 32px;
 
     hr {
         border: 0;
-        border-top: 1px solid #272727;
+        border-top: 1px solid $text;
     }
 
     h1,
@@ -61,7 +61,7 @@ $header-overlap: 32px;
 
             font-size: 0px;
 
-            @include responsive-md() {
+            @include media-breakpoint-up(md) {
                 top: $header-overlap;
                 width: 240px;
             }
@@ -73,10 +73,6 @@ $header-overlap: 32px;
     }
 
     main {
-        section {
-            margin-bottom: 1rem;
-        }
-
         a {
             background-color: mix($primary, $field, 8%);
             border-bottom: 1px dashed $primary;
@@ -120,15 +116,14 @@ $header-overlap: 32px;
     border-bottom: 1px dotted scale-color($text, $lightness: 60%);
     padding: 0 0 0.75rem 0;
 
-    @include responsive-md() {
+    @include media-breakpoint-up(md) {
         border: 0;
         padding: 0;
         text-align: start;
     }
 
     .info {
-
-        @include responsive-md() {
+        @include media-breakpoint-up(md) {
             flex-shrink: 0;
             width: 180px;
 
@@ -152,7 +147,7 @@ $header-overlap: 32px;
             // Paragaphs are inserted by Markdown parsing of remarks
             margin: 0.125rem;
 
-            @include responsive-md() {
+            @include media-breakpoint-up(md) {
                 margin: 0;
             }
         }
@@ -167,7 +162,7 @@ $header-overlap: 32px;
         padding: 0;
 
         li {
-            margin: 0;
+            margin: 0 0 0.5rem 0;
             padding: 0;
         }
     }
@@ -192,4 +187,12 @@ $header-overlap: 32px;
         font-weight: bold;
         letter-spacing: 0.03rem;
     }
+}
+
+.whatis {
+    color: #666;
+    font-size: 0.875rem;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.05rem;
+    margin-right: 0.5rem;
 }

@@ -1,9 +1,13 @@
+import cx from "classnames";
 import { parse as marked } from "marked";
 import Head from "next/head";
+import Link from "next/link";
 
 import Base64Protect from "@/components/Base64Protect";
 import ProfilePicture from "@/components/ProfilePicture";
+
 import styles from "./cv.module.scss";
+import cssCommon from "../src/sass/common.module.scss";
 
 // #region Components
 
@@ -62,9 +66,8 @@ const technicalExperience = [
         location: "Zürich, Switzerland",
         date: [2022, 2023],
         remarks: [
-            "Developed **AIs** for a **digital learning** application that provides real-time, tailored feedback to texts written in natural language.",
+            "Developed **multilingual AIs** for a **digital learning** application that provides real-time and tailored didactic feedback to texts written in natural language.",
             "Researched how **prompt engineering** affects large language models (**LLMs**) in **natural language inference** tasks.",
-            "Developed in-house, multilingual natural language AI models.",
             "Took responsibility for developer ergonomics concerns including Gradle builds, build automation.",
         ],
     },
@@ -166,14 +169,14 @@ export default () => (<>
         <main className="container-fluid">
             <div className="row gx-5">
                 <div className="col-lg-5">
-                    <section className="">
+                    <section className={cssCommon.flowable}>
                         {/* <h2>Objective</h2> */}
                         <p className="lead">Hello &#128075;</p>
                         <p className="">I'm a computer scientist with <strong>over 10 years of combined technical and leadership experience</strong>. I did my Masters degree at <a href="https://www.epfl.ch/education/master/programs/computer-science/">EPFL</a>, one of the world's top 10 universities for computer science. Before that, I led a <strong>genetic engineering research</strong> group and explored the nascent field of <strong>biological computation</strong>.</p>
 
                         <p><strong>I'm looking for a senior engineering or software architecture role</strong> where I can design solutions, own a product, lead a team, and be a mentor to junior colleagues.</p>
                     </section>
-                    <section>
+                    <section className={cssCommon.flowable}>
                         {/* <h2>What I can do for you</h2> */}
                         <hr style={{ width: "200px" }} />
 
@@ -202,21 +205,40 @@ export default () => (<>
                             <div>Let's explore <strong>disruptive technologies</strong> together. Thanks to my excellent academic background, I'm comfortable researching technology at the cutting edge of innovation.</div>
                         </div>
                     </section>
-                    <section className="fsx-sm">
+                    <section className={cx("fsx-sm", cssCommon.flowable)}>
                         <h2>Competences</h2>
                         <p><strong>Human languages:</strong> English (native), Slovak (native), Czech (fluent), French (fluent), Spanish (beginner)</p>
                         <p><strong>Tech stuff:</strong></p>
                     </section>
-                    <section id={styles.publications}>
-                        <h2>Publications</h2>
+                    <section id={styles.publications} className={cssCommon.flowable}>
+                        <h2>Papers and publications</h2>
                         <ul className="fsx-sm">
-                            <li><a href="https://pubmed.ncbi.nlm.nih.gov/26075023/">(2015) No training required: experimental tests support homology-based DNA assembly as a best practice in synthetic biology </a></li>
+                        <li>
+                                <span className={styles.whatis}>Thesis</span>
+                                <Link href="/docs/MastersThesisNLI.pdf">Leveraging Natural Language Inference for Automatic Feedback Assignment</Link>
+                            </li>
+                            <li>
+                                <span className={styles.whatis}>Paper</span>
+                                <a href="/docs/CovidTracingLORA.pdf">Properties of contact tracing systems in low-income settings</a>
+                            </li>
+                            <li>
+                                <span className={styles.whatis}>Paper</span>
+                                <Link href="/docs/SJS-JFE.pdf">SJS-JFE: A Java Frontend for Scala.js</Link>
+                            </li>
+                            <li>
+                                <span className={styles.whatis}>Thesis</span>
+                                <Link href="/docs/ShareTreeDB.pdf">Blockchain for Clinical Decision Support Systems</Link>
+                            </li>
+                            <li>
+                                <span className={styles.whatis}>Journal</span>
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/26075023/">No training required: experimental tests support homology-based DNA assembly as a best practice in synthetic biology</a>
+                            </li>
                         </ul>
                     </section>
                 </div>
 
                 <div className="col">
-                    <section className="mb-4">
+                    <section className={cssCommon.flowable}>
                         <h2>Academics</h2>
                         <div className="d-flex gap-4 fsx-xs">
                             <div>
@@ -291,9 +313,9 @@ export default () => (<>
                         <div className={`d-flex gap-3 ${styles["os-project"]}`}>
                             <i className="fa-solid fa-square-root-variable"></i>
                             <div className="flex-grow-1">
-                                <small>Library</small>
-                                <h3 className={styles.title}><a href="#">Evaluatex</a></h3>
-                                <p className="fsx-sm">Safe LaTeX and ASCIIMath evaluator for JavaScript.</p>
+                                <span className={styles.whatis}>Library</span>
+                                <h3 className={styles.title}><a href="https://github.com/arthanzel/evaluatex">Evaluatex</a></h3>
+                                <p className="fsx-sm">Safe LaTeX and ASCIIMath evaluator for JavaScript. <a href="https://arthanzel.github.io/evaluatex">Demo.</a></p>
                             </div>
                         </div>
                     </div>
@@ -301,9 +323,9 @@ export default () => (<>
                         <div className={`d-flex gap-3 ${styles["os-project"]}`}>
                             <i className="fa-solid fa-dna"></i>
                             <div className="flex-grow-1">
-                                <small>Webapp</small>
-                                <h3 className={styles.title}><a href="#">Quantum of Cells</a></h3>
-                                <p className="fsx-sm">Prototype systems of interacting differential equations in the browser.</p>
+                                <span className={styles.whatis}>Webapp</span>
+                                <h3 className={styles.title}><a href="https://github.com/arthanzel/quantumofcells">Quantum of Cells</a></h3>
+                                <p className="fsx-sm">Prototype systems of interacting differential equations in the browser. <a href="https://arthanzel.github.io/quantumofcells">Demo.</a></p>
                             </div>
                         </div>
                     </div>
@@ -311,8 +333,8 @@ export default () => (<>
                         <div className={`d-flex gap-3 ${styles["os-project"]}`}>
                             <i className="fa-solid fa-fish-fins"></i>
                             <div className="flex-grow-1">
-                                <small>Research</small>
-                                <h3 className={styles.title}><a href="#">The River Machine</a></h3>
+                                <span className={styles.whatis}>Research</span>
+                                <h3 className={styles.title}><a href="https://http://github.com/arthanzel/theriverengine">The River Engine</a></h3>
                                 <p className="fsx-sm">Agent-based population modelling of fish in a river ecosystem.</p>
                             </div>
                         </div>
@@ -321,8 +343,8 @@ export default () => (<>
                         <div className={`d-flex gap-3 ${styles["os-project"]}`}>
                             <i className="fa-solid fa-share-nodes"></i>
                             <div className="flex-grow-1">
-                                <small>Research</small>
-                                <h3 className={styles.title}><a href="#">Share Tree DB</a></h3>
+                                <span className={styles.whatis}>Research</span>
+                                <h3 className={styles.title}><Link href="/docs/ShareTreeDB.pdf">Share Tree DB</Link></h3>
                                 <p className="fsx-sm">
                                     A blockchain-based database allowing secure storage and sharing of data in untrusted environments.</p>
                             </div>
