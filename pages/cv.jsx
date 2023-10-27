@@ -208,7 +208,7 @@ export default () => (<>
                     <section className={cx("fsx-sm", cssCommon.flowable)}>
                         <h2>Competences</h2>
                         <p><strong>Human languages:</strong> English (native), Slovak (native), Czech (fluent), French (fluent), Spanish (beginner)</p>
-                        <p><strong>Tech stuff:</strong></p>
+                        <p><strong>Tech stuff:</strong> AI+Machine Learning, Web technologies, distributed and decentralized systems, compilers and languages, digital privacy, biological computation</p>
                     </section>
                     <section id={styles.publications} className={cssCommon.flowable}>
                         <h2>Papers and publications</h2>
