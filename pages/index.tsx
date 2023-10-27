@@ -50,7 +50,7 @@ export default function IndexPage() {
 
             <div className="d-flex gap-2">
                 <div className="btn btn-outline-primary">Writings - coming soon</div>
-                <Link className="btn btn-outline-primary" href="/cv-fluid">Résumé</Link>
+                <Link className="btn btn-outline-primary" href="/cv">Résumé</Link>
             </div>
         </main>
     </>);
