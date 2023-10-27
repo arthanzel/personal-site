@@ -1,0 +1,50 @@
+experience:
+  - role: Data Scientist
+    company: Taskbase AG
+    href: https://taskbase.com
+    location: Zürich, Switzerland
+    date: [2022, 2023]
+    tag: technical
+    remarks:
+      - Developed **multilingual AIs** for a **digital learning** application that provides real-time and tailored didactic feedback to texts written in natural language.
+      - Researched how **prompt engineering** affects large language models (**LLMs**) in **natural language inference** tasks.
+      - Took responsibility for developer ergonomics concerns including Gradle builds, build automation.
+  - role: Software Engineer
+    company: eSMART Technologies
+    href: https://myesmart.com
+    location: Lausanne, Switzerland
+    date: [2020, 2021]
+    tag: technical
+    remarks:
+      - Architected a **cloud-hybrid** **IoT** system for smart home management.
+      - Designed **security** algorithms for device discovery and pairing.
+      - Evaluated **database** software for performance in **big data analytics** pipelines.
+      - Created automated provisioning and deployment processes for **cloud infrastructure**.
+  - role: Frontend Engineer
+    company: GitLab
+    href: https://gitlab.com
+    location: Remote
+    date: [2019]
+    tag: technical
+    remarks:
+      - Implemented rich and **responsive UIs** for a project planning application.
+      - Contributed to **TDD** practices with near 100% code coverage.
+      - Patched **security** holes in frontend code and managed security backports.
+      - Worked **asynchronously** in a **full-stack** team with devs and designers from around the world.
+  - role: Web Developer
+    company: Pivotree Inc.
+    href: https://www.pivotree.com
+    location: Ottawa, Canada + Remote
+    date: [2011, 2018]
+    tag: technical
+    remarks:
+      - Developed **full-stack** B2B and B2C **e-commerce** applications for large retailers using **Oracle Commerce**.
+      - Led **R&D** for next-generation, **microservice-based** webapps using **isomorphic rendering** techniques.
+      - Worked remotely from Valencia, Spain while collaborating with a team in Ottawa, Canada.
+  - role: Web Developer
+    company: Freelance
+    location: Ottawa, Canada
+    date: [2013, 2015]
+    remarks:
+      - Designed and developed **custom webapps** for student groups at the University of Ottawa.
+      - Worked closely with private clients to deliver and maintain **pixel-perfect** solutions.
