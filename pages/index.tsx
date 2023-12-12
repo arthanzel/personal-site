@@ -35,7 +35,7 @@ export default function IndexPage() {
                     I'm a travelling computer scientist and occasional musician.
                 </p>
                 <div className="bg-primary-subtle p-2 pb-1 mb-3">
-                    <p><strong>I'm looking for work!</strong> If you or your company are looking for a <strong>senior-level engineer</strong> or <strong>software architect</strong>, I'm more than happy to talk about interesting stuff we can create together. I've been in the computing industry for <strong>over 10 years</strong> and have excellent academic and practical experience.</p>
+                    <p><strong>I'm looking for work!</strong> If you or your company are looking for a <strong>senior-level engineer</strong>, <strong>technical lead</strong>, or <strong>software architect</strong>, I'm more than happy to talk about interesting stuff we can create together. I've been in the computing industry for <strong>over 10 years</strong> and have excellent academic and practical experience.</p>
                     <p><Link className="btn btn-outline-primary" href="/cv">View my CV</Link></p>
                 </div>
                 <p>

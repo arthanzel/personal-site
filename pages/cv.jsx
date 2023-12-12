@@ -174,7 +174,7 @@ export default () => (<>
                         <p className="lead">Hello &#128075;</p>
                         <p className="">I'm a computer scientist with <strong>over 10 years of combined technical and leadership experience</strong>. I did my Masters degree at <a href="https://www.epfl.ch/education/master/programs/computer-science/">EPFL</a>, one of the world's top 10 universities for computer science. Before that, I led a <strong>genetic engineering research</strong> group and explored the nascent field of <strong>biological computation</strong>.</p>
 
-                        <p><strong>I'm looking for a senior engineering or software architecture role</strong> where I can design solutions, own a product, lead a team, and be a mentor to junior colleagues.</p>
+                        <p><strong>I'm looking for a senior engineering, tech lead, or software architecture role</strong> where I can design solutions, own a product, lead a team, and be a mentor to junior colleagues. I'm eager to <strong>innovate, teach, and make positive change</strong>.</p>
                     </section>
                     <section className={cssCommon.flowable}>
                         {/* <h2>What I can do for you</h2> */}
